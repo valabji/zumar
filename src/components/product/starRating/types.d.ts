@@ -1,0 +1,3 @@
+type RateItem = {
+    rate: number
+}

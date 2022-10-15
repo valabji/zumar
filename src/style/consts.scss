@@ -1,0 +1,22 @@
+
+$mobile: 320px;
+$mobile-md: 375px;
+$mobile-lg: 425px;
+$tablet: 768px;
+$tablet-lg: 960px;
+$laptop: 1024px;
+$lg: 1110px;
+$laptop-lg: 1440px;
+$screen-4k: 2560px;
+
+$max-width: 1316px;
+
+:root {
+  --max-width: 1316px;
+  --bright-black: #111111;
+  --gray: #828282;
+  --bright-gray: #ECF1F4;
+  --red: #FF374E;
+  --green: #38B349;
+  --dark-blue: #0F3043;
+}

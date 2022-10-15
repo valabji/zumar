@@ -1,0 +1,19 @@
+@import '../consts.scss';
+
+.breadcrumb-container {
+  display: list-item;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  @media (min-width: $tablet) {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  }
+}
+.breadcrumb-item {
+  color: var(--gray);
+  font-size: 12px;
+  text-decoration: none;
+  padding:2px;
+}

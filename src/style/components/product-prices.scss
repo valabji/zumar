@@ -1,0 +1,34 @@
+@import '../consts.scss';
+
+.product-prices {
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  font-weight: normal;
+  display: grid;
+  grid-template-columns: auto auto;
+  @media (min-width: $tablet) {
+    grid-template-columns: auto auto auto;
+    padding-bottom: 15px;
+  }
+  .product-prices-item {
+    flex: 1;
+    display: flex;
+  padding-bottom: 15px;
+    @media (min-width: $tablet) {
+      grid-template-columns: auto auto auto;
+      padding-bottom: 0px;
+    }
+    flex-direction: column;
+  }
+  .product-prices-item-title {
+    margin: 0px;
+    font-size: 12px;
+  }
+  .product-prices-item-price {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}

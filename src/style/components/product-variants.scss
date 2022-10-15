@@ -1,0 +1,53 @@
+@import '../consts.scss';
+
+.product-variant {
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  .product-variant-name {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .product-variant-options {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    @media (min-width: $tablet) {
+      grid-template-columns: max-content max-content max-content;
+    }
+  }
+  .product-variant-item {
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &.selected {
+      background-color: var(--bright-gray);
+    }
+  }
+  .product-variant-item-image {
+    width: 31px;
+    border-radius: 35px;
+    margin-right: 10px;
+  }
+  .product-variant-item-value {
+    font-weight: normal;
+    font-size: 18px;
+    &.noImage {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .product-variant-item-unit {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}

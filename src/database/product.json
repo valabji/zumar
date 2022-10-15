@@ -1,3 +1,87 @@
 {
-    
+    "name":"Single SIM 11 Pro Max Phone Gold 512GB6.5 Inch Hot Selling Phone Wholesale ",
+    "code":  "578902-00",
+    "rate":4.6,
+    "ratings":200,    
+    "basePrice":1150.50,
+    "prices":[
+        {
+            "min":10,
+            "price":1145
+        },
+        {
+            "min":50,
+            "price":1145
+        }
+    ],
+    "categoryID":4,
+    "category":"Mobile Phones",
+    "parentCategory":"Home > All Industries > Consumer Electronics > Mobile Phone & Accessories",
+    "variants":[
+        {
+            "name":"color",
+            "text":"Availble color",
+            "fontWeight":"600",
+            "fontSize":"20px",
+            "optionFontWeight":"normal",
+            "optionFontSize":"18px",
+            "defaultOption":0,
+            "options":[
+                {
+                    "thumbnail":"/imgs/product/black.png",
+                    "value":"Black",
+                    "unit":"",
+                    "price":0
+                },
+                {
+                    "thumbnail":"/imgs/product/red.png",
+                    "value":"Red",
+                    "unit":"",
+                    "price":-100
+                },
+                {
+                    "thumbnail":"/imgs/product/green.png",
+                    "value":"Green",
+                    "unit":"",
+                    "price":200
+                }
+            ]
+        },
+        {
+            "name":"storage",
+            "text":"Storage capacity",
+            "fontWeight":"normal",
+            "fontSize":"18px",
+            "defaultOption":2,
+            "optionFontWeight":"600",
+            "optionFontSize":"32px",
+            "options":[
+                {
+                    "thumbnail":"",
+                    "value":"128",
+                    "unit":"GB",
+                    "price":0
+                },
+                {
+                    "thumbnail":"",
+                    "value":"256",
+                    "unit":"GB",
+                    "price":150
+                },
+                {
+                    "thumbnail":"",
+                    "value":"512",
+                    "unit":"GB",
+                    "price":300
+                }
+            ]
+        }
+    ],
+    "stock":12,
+    "thumbnail":"/imgs/product/1.png",
+    "images":[
+        "/imgs/product/2.png",
+        "/imgs/product/3.png",
+        "/imgs/product/4.png"
+    ]
 }

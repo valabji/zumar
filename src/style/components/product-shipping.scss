@@ -1,0 +1,53 @@
+@import '../consts.scss';
+
+.product-shipping {
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  .product-shipping-name {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .product-shipping-price {
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--red);
+    margin-left: 10px;
+  }
+  .product-shipping-options {
+    padding:10px;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    @media (min-width: $tablet) {
+      grid-template-columns:  max-content  max-content;
+    }
+  }
+  .product-shipping-item {
+    border-radius: 10px;
+    padding:10px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &.selected{
+    background-color: var(--bright-gray);
+    }
+  }
+  .product-shipping-item-value {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .product-shipping-item-eta {
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
