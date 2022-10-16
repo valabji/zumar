@@ -1,3 +1,3 @@
 interface Product {
-  name: string
+  name: string;
 }

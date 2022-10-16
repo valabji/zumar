@@ -4,6 +4,6 @@ export default function (price: number, decimals: number = 2): string {
     currency: 'USD',
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals
-  })
-  return formatter.format(price)
+  });
+  return formatter.format(price);
 }

@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react'
-import DropDown from './dropDown'
+import React, { ReactElement } from 'react';
+import DropDown from './dropDown';
 
-export default function menu ({ menuOpen }: { menuOpen: boolean }): ReactElement {
+export default function menu({ menuOpen }: { menuOpen: boolean }): ReactElement {
   return (
     <div className={`menu ${menuOpen ? 'open' : ''}`}>
       <form action="/search" style={{ width: 605 }}>
@@ -56,5 +56,5 @@ export default function menu ({ menuOpen }: { menuOpen: boolean }): ReactElement
         Account
       </a>
     </div>
-  )
+  );
 }

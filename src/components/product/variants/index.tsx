@@ -1,11 +1,9 @@
-import React, { useState, ReactElement } from 'react'
-import VariantOption from './variantOption'
-import '../../../style/components/product-variants.scss'
-export default function variant (variant: Variant): ReactElement {
-  const [selectedOption, setSelectedOption] = useState(
-    variant.options[variant.defaultOption]
-  )
-  variant.onChange(selectedOption)
+import React, { useState, ReactElement } from 'react';
+import VariantOption from './variantOption';
+import '../../../style/components/product-variants.scss';
+export default function variant(variant: Variant): ReactElement {
+  const [selectedOption, setSelectedOption] = useState(variant.options[variant.defaultOption]);
+  variant.onChange(selectedOption);
   return (
     <div className="product-variant">
       <div
@@ -16,14 +14,14 @@ export default function variant (variant: Variant): ReactElement {
       </div>
       <div className="product-variant-options">
         {variant.options.map((option) => {
-          const isSelected = option === selectedOption
+          const isSelected = option === selectedOption;
           return (
             <VariantOption
-            key={Math.random()}
+              key={Math.random()}
               value={option.value}
               selected={isSelected}
               onClick={() => {
-                setSelectedOption(option)
+                setSelectedOption(option);
               }}
               fontWeight={variant.optionFontWeight}
               fontSize={variant.optionFontSize}
@@ -31,9 +29,9 @@ export default function variant (variant: Variant): ReactElement {
               thumbnail={option.thumbnail}
               price={option.price}
             />
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }

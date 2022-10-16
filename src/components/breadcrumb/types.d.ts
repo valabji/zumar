@@ -1,9 +1,9 @@
 interface breadcrumb {
-  id: number
+  id: number;
 }
 
 interface category {
-  name: string
-  id: number
-  parentID: number | null
+  name: string;
+  id: number;
+  parentID: number | null;
 }

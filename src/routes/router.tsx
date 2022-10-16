@@ -1,15 +1,15 @@
-import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import Layout from '../layout'
-import ErrorPage from '../pages/ErrorPage'
-import HomePage from '../pages/HomePage'
-import ProductPage from '../pages/ProductPage'
-import CategoryPage from '../pages/CategoryPage'
-import SearchPage from '../pages/searchPage'
-import ServicesPage from '../pages/servicesPage'
-import OrdersPage from '../pages/ordersPage'
-import AccountPage from '../pages/accountPage'
-import CartPage from '../pages/cartPage'
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from '../layout';
+import ErrorPage from '../pages/ErrorPage';
+import HomePage from '../pages/HomePage';
+import ProductPage from '../pages/ProductPage';
+import CategoryPage from '../pages/CategoryPage';
+import SearchPage from '../pages/searchPage';
+import ServicesPage from '../pages/servicesPage';
+import OrdersPage from '../pages/ordersPage';
+import AccountPage from '../pages/accountPage';
+import CartPage from '../pages/cartPage';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -53,5 +53,5 @@ const router = createBrowserRouter([
       }
     ]
   }
-])
-export default router
+]);
+export default router;

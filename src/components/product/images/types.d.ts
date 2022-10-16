@@ -1,4 +1,4 @@
 interface ProductImages {
-  thumbnail: string
-  images: string[]
+  thumbnail: string;
+  images: string[];
 }

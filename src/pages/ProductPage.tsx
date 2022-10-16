@@ -1,57 +1,42 @@
-import React, { useState, ReactElement } from 'react'
-import product from '../database/product.json'
-import Breadcrumb from '../components/breadcrumb'
-import '../style/pages/productPage.scss'
-import {
-  Variant,
-  Prices,
-  Images,
-  StarRating,
-  Quantity,
-  Shipping
-} from '../components/product'
-import formatPrice from '../utils/formatPrice'
-import { useAppDispatch } from '../store/hooks'
-import { addToCart } from '../store/cart'
-export default function productPage (): ReactElement {
-  const dispatch = useAppDispatch()
-  const [variants, setVariants] = useState<
-  Array<{ name: string, value: VariantOption }>
-  >([])
-  const [quantityPrice, setQuantityPrice] = useState(0)
-  const [shippingPrice, setShippingPrice] = useState(0)
-  const [variantsPrice, setVariantsPrice] = useState(0)
+import React, { useState, ReactElement } from 'react';
+import product from '../database/product.json';
+import Breadcrumb from '../components/breadcrumb';
+import '../style/pages/productPage.scss';
+import { Variant, Prices, Images, StarRating, Quantity, Shipping } from '../components/product';
+import formatPrice from '../utils/formatPrice';
+import { useAppDispatch } from '../store/hooks';
+import { addToCart } from '../store/cart';
+export default function productPage(): ReactElement {
+  const dispatch = useAppDispatch();
+  const [variants, setVariants] = useState<Array<{ name: string; value: VariantOption }>>([]);
+  const [quantityPrice, setQuantityPrice] = useState(0);
+  const [shippingPrice, setShippingPrice] = useState(0);
+  const [variantsPrice, setVariantsPrice] = useState(0);
   const countVariantsPrice = (): void => {
-    let tempvariantsPrice = 0
+    let tempvariantsPrice = 0;
     variants.forEach((v) => {
-      tempvariantsPrice += v.value.price
-    })
-    setVariantsPrice(tempvariantsPrice)
-  }
+      tempvariantsPrice += v.value.price;
+    });
+    setVariantsPrice(tempvariantsPrice);
+  };
   return (
     <div className="container">
       <Breadcrumb id={product.categoryID} />
       <div className="product-container">
         <p className="product-name-mobile">{product.name}</p>
         <div className="product-rating-mobile">
-          <span className="product-code">
-            {'Product Code:  ' + product.code}
-          </span>
+          <span className="product-code">{'Product Code:  ' + product.code}</span>
           <span className="product-rating-container">
             <StarRating rate={product.rate} />
             <span className="product-rating-rate">{product.rate}</span>
-            <span className="product-rating-ratings">
-              {'(' + product.ratings.toString() + ')'}
-            </span>
+            <span className="product-rating-ratings">{'(' + product.ratings.toString() + ')'}</span>
           </span>
         </div>
         <Images thumbnail={product.thumbnail} images={product.images} />
         <div className="details">
           <p className="product-name">{product.name}</p>
           <div className="product-rating">
-            <span className="product-code">
-              {'Product Code:  ' + product.code}
-            </span>
+            <span className="product-code">{'Product Code:  ' + product.code}</span>
             <span className="product-rating-container">
               <StarRating rate={product.rate} />
               <span className="product-rating-rate">{product.rate}</span>
@@ -73,31 +58,31 @@ export default function productPage (): ReactElement {
                 fontWeight={variantItem.fontWeight}
                 options={variantItem.options}
                 onChange={(option) => {
-                  let variantIndex = null
-                  const tmpVariants = variants
+                  let variantIndex = null;
+                  const tmpVariants = variants;
                   for (let i = 0; i < variants.length; i++) {
                     if (variantItem.name === variants[i].name) {
-                      variantIndex = i
+                      variantIndex = i;
                     }
                   }
                   if (variantIndex != null) {
                     tmpVariants[variantIndex] = {
                       name: variantItem.name,
                       value: option
-                    }
+                    };
                   } else {
-                    tmpVariants.push({ name: variantItem.name, value: option })
+                    tmpVariants.push({ name: variantItem.name, value: option });
                   }
-                  setVariants(tmpVariants)
-                  countVariantsPrice()
+                  setVariants(tmpVariants);
+                  countVariantsPrice();
                 }}
                 text={variantItem.text}
               />
-            )
+            );
           })}
           <Quantity
             onChange={(price) => {
-              setQuantityPrice(price)
+              setQuantityPrice(price);
             }}
             basePrice={product.basePrice}
             prices={product.prices}
@@ -106,7 +91,7 @@ export default function productPage (): ReactElement {
           />
           <Shipping
             onChange={(price) => {
-              setShippingPrice(price)
+              setShippingPrice(price);
             }}
           />
           <p className="product-total">
@@ -118,17 +103,14 @@ export default function productPage (): ReactElement {
           <div className="product-buttons">
             <span
               onClick={() => {
-                dispatch(addToCart(product.name))
+                dispatch(addToCart(product.name));
               }}
               className="btn"
             >
               <span>Place order now</span>
             </span>
             <a href="tel:+201098458363" className="btn call">
-              <img
-                src="/imgs/phone.svg"
-                style={{ height: 24, marginRight: 10 }}
-              />
+              <img src="/imgs/phone.svg" style={{ height: 24, marginRight: 10 }} />
               <span>Call us</span>
             </a>
             <span className="text">We are 24/7 available</span>
@@ -136,5 +118,5 @@ export default function productPage (): ReactElement {
         </div>
       </div>
     </div>
-  )
+  );
 }

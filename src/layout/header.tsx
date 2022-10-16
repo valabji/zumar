@@ -1,11 +1,11 @@
-import React, { useState, ReactElement } from 'react'
-import '../style/components/header.scss'
-import { DropDown, Menu, NavItem } from '../components/header'
-import { useAppSelector } from '../store/hooks'
+import React, { useState, ReactElement } from 'react';
+import '../style/components/header.scss';
+import { DropDown, Menu, NavItem } from '../components/header';
+import { useAppSelector } from '../store/hooks';
 
-export default function header (): ReactElement {
-  const cartItems = useAppSelector((state) => state.cart.length)
-  const [menuOpen, setMenuOpen] = useState(false)
+export default function header(): ReactElement {
+  const cartItems = useAppSelector((state) => state.cart.length);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div>
       <div className="header-container">
@@ -14,11 +14,7 @@ export default function header (): ReactElement {
             <img src="/imgs/Zumar.png" style={{ height: 14 }} />
           </a>
           <div style={{ flex: 1 }} />
-          <form
-            action="/search"
-            className="header-section-middle"
-            style={{ width: 605 }}
-          >
+          <form action="/search" className="header-section-middle" style={{ width: 605 }}>
             <DropDown />
             <div
               style={{
@@ -34,10 +30,7 @@ export default function header (): ReactElement {
                 className="btn"
                 style={{ width: 24, marginRight: 10, height: 24 }}
               />
-              <input
-                name="query"
-                placeholder="Search by product name or seller"
-              />
+              <input name="query" placeholder="Search by product name or seller" />
             </div>
           </form>
           <div style={{ flex: 1 }} />
@@ -46,20 +39,14 @@ export default function header (): ReactElement {
             <NavItem name="Orders" href="/orders" />
             <NavItem name="Account" href="/account" />
             <a className="btn" href="/cart" style={{ position: 'relative' }}>
-              <img
-                src="/imgs/Bag.svg"
-                style={{ marginRight: 26, marginTop: 2 }}
-              />
-              <span
-                className="bag-badge"
-                style={{ display: cartItems > 0 ? 'flex' : 'none' }}
-              >
+              <img src="/imgs/Bag.svg" style={{ marginRight: 26, marginTop: 2 }} />
+              <span className="bag-badge" style={{ display: cartItems > 0 ? 'flex' : 'none' }}>
                 <span>{cartItems < 10 ? cartItems : '9+'}</span>
               </span>
             </a>
             <img
               onClick={() => {
-                setMenuOpen(!menuOpen)
+                setMenuOpen(!menuOpen);
               }}
               src="/imgs/Menu.svg"
               className="btn"
@@ -69,8 +56,13 @@ export default function header (): ReactElement {
         </div>
       </div>
       <div style={{ height: 87 }}></div>
-      <div onClick={() => { setMenuOpen(false) }} className={`menu-shade ${menuOpen ? 'open' : ''}`}></div>
+      <div
+        onClick={() => {
+          setMenuOpen(false);
+        }}
+        className={`menu-shade ${menuOpen ? 'open' : ''}`}
+      ></div>
       <Menu menuOpen={menuOpen} />
     </div>
-  )
+  );
 }

@@ -1,3 +1,3 @@
 interface RateItem {
-  rate: number
+  rate: number;
 }
