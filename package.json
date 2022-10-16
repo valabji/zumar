@@ -23,7 +23,8 @@
     "clean": "rm -rf node_modules && rm -rf yarn.lock && yarn",
     "lint": "eslint .",
     "fix": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/redux-persist": "^4.3.1",
@@ -37,7 +38,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "husky": "^8.0.0"
   },
   "browserslist": {
     "production": [
