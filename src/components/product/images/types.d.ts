@@ -1,4 +1,4 @@
-type ProductImages = {
-    thumbnail: string
-    images: string[]
+interface ProductImages {
+  thumbnail: string
+  images: string[]
 }

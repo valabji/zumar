@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom'
+import React, { ReactElement } from 'react'
 import { emptyCart } from '../store/cart'
 import { useAppDispatch } from '../store/hooks'
 
-export default function () {
+export default function cartPage (): ReactElement {
   const dispatch = useAppDispatch()
   return (
     <div className="container">

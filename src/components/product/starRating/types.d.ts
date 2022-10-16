@@ -1,3 +1,3 @@
-type RateItem = {
-    rate: number
+interface RateItem {
+  rate: number
 }

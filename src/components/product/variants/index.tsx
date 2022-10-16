@@ -1,9 +1,9 @@
+import React, { useState, ReactElement } from 'react'
 import VariantOption from './variantOption'
 import '../../../style/components/product-variants.scss'
-import { useState } from 'react'
-export default function (variant: Variant) {
+export default function variant (variant: Variant): ReactElement {
   const [selectedOption, setSelectedOption] = useState(
-    variant.options[variant.defaultOption],
+    variant.options[variant.defaultOption]
   )
   variant.onChange(selectedOption)
   return (
@@ -16,9 +16,10 @@ export default function (variant: Variant) {
       </div>
       <div className="product-variant-options">
         {variant.options.map((option) => {
-          let isSelected = option == selectedOption
+          const isSelected = option === selectedOption
           return (
             <VariantOption
+            key={Math.random()}
               value={option.value}
               selected={isSelected}
               onClick={() => {

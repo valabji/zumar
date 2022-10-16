@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function () {
+export default function categoryPage (): ReactElement {
   const { id } = useParams()
 
   return (

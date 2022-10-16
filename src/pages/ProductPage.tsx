@@ -1,7 +1,5 @@
-import { useParams } from 'react-router-dom'
+import React, { useState, ReactElement } from 'react'
 import product from '../database/product.json'
-import categories from '../database/categories.json'
-import { useEffect, useState } from 'react'
 import Breadcrumb from '../components/breadcrumb'
 import '../style/pages/productPage.scss'
 import {
@@ -10,22 +8,20 @@ import {
   Images,
   StarRating,
   Quantity,
-  Shipping,
+  Shipping
 } from '../components/product'
-import price from '../components/product/prices/price'
 import formatPrice from '../utils/formatPrice'
 import { useAppDispatch } from '../store/hooks'
 import { addToCart } from '../store/cart'
-export default function () {
-  const { id } = useParams()
+export default function productPage (): ReactElement {
   const dispatch = useAppDispatch()
   const [variants, setVariants] = useState<
-    { name: string; value: VariantOption }[]
+  Array<{ name: string, value: VariantOption }>
   >([])
   const [quantityPrice, setQuantityPrice] = useState(0)
   const [shippingPrice, setShippingPrice] = useState(0)
   const [variantsPrice, setVariantsPrice] = useState(0)
-  const countVariantsPrice = () => {
+  const countVariantsPrice = (): void => {
     let tempvariantsPrice = 0
     variants.forEach((v) => {
       tempvariantsPrice += v.value.price
@@ -45,7 +41,7 @@ export default function () {
             <StarRating rate={product.rate} />
             <span className="product-rating-rate">{product.rate}</span>
             <span className="product-rating-ratings">
-              {'(' + product.ratings + ')'}
+              {'(' + product.ratings.toString() + ')'}
             </span>
           </span>
         </div>
@@ -60,7 +56,7 @@ export default function () {
               <StarRating rate={product.rate} />
               <span className="product-rating-rate">{product.rate}</span>
               <span className="product-rating-ratings">
-                {'(' + product.ratings + ')'}
+                {'(' + product.ratings.toString() + ')'}
               </span>
             </span>
           </div>
@@ -68,6 +64,7 @@ export default function () {
           {product.variants.map((variantItem) => {
             return (
               <Variant
+                key={Math.random()}
                 name={variantItem.name}
                 defaultOption={variantItem.defaultOption}
                 optionFontWeight={variantItem.optionFontWeight}
@@ -77,16 +74,16 @@ export default function () {
                 options={variantItem.options}
                 onChange={(option) => {
                   let variantIndex = null
-                  let tmpVariants = variants
+                  const tmpVariants = variants
                   for (let i = 0; i < variants.length; i++) {
-                    if (variantItem.name == variants[i].name) {
+                    if (variantItem.name === variants[i].name) {
                       variantIndex = i
                     }
                   }
-                  if (variantIndex) {
+                  if (variantIndex != null) {
                     tmpVariants[variantIndex] = {
                       name: variantItem.name,
-                      value: option,
+                      value: option
                     }
                   } else {
                     tmpVariants.push({ name: variantItem.name, value: option })
@@ -107,10 +104,16 @@ export default function () {
             stock={product.stock}
             variantsPrice={variantsPrice}
           />
-          <Shipping onChange={(price) => {setShippingPrice(price)}} />
+          <Shipping
+            onChange={(price) => {
+              setShippingPrice(price)
+            }}
+          />
           <p className="product-total">
             Total{' '}
-            <span className="product-total-price">{formatPrice(quantityPrice+shippingPrice, 0)}</span>
+            <span className="product-total-price">
+              {formatPrice(quantityPrice + shippingPrice, 0)}
+            </span>
           </p>
           <div className="product-buttons">
             <span

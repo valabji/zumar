@@ -1,3 +1,3 @@
-type Product = {
-    name: string
+interface Product {
+  name: string
 }

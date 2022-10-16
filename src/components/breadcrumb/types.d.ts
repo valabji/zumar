@@ -1,9 +1,9 @@
-type breadcrumb = {
-    id: number
+interface breadcrumb {
+  id: number
 }
 
-type category = {
-    name: string
-    id: number
-    parentID: number | null
+interface category {
+  name: string
+  id: number
+  parentID: number | null
 }

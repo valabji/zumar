@@ -1,10 +1,9 @@
+import React, { useState, ReactElement } from 'react'
 import '../style/components/header.scss'
 import { DropDown, Menu, NavItem } from '../components/header'
-import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { emptyCart } from '../store/cart'
-import { useState } from 'react'
+import { useAppSelector } from '../store/hooks'
 
-export default function () {
+export default function header (): ReactElement {
   const cartItems = useAppSelector((state) => state.cart.length)
   const [menuOpen, setMenuOpen] = useState(false)
   return (
@@ -27,7 +26,7 @@ export default function () {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: 47,
-                width: 433,
+                width: 433
               }}
             >
               <img
@@ -70,7 +69,7 @@ export default function () {
         </div>
       </div>
       <div style={{ height: 87 }}></div>
-      <div onClick={()=>{setMenuOpen(false)}} className={`menu-shade ${menuOpen ? 'open' : ''}`}></div>
+      <div onClick={() => { setMenuOpen(false) }} className={`menu-shade ${menuOpen ? 'open' : ''}`}></div>
       <Menu menuOpen={menuOpen} />
     </div>
   )

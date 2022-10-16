@@ -1,4 +1,4 @@
-type Item = {
-    name: string
-    href?: string
+interface Item {
+  name: string
+  href?: string
 }

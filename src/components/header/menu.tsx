@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react'
 import DropDown from './dropDown'
 
-export default function ({ menuOpen }: { menuOpen: boolean }) {
+export default function menu ({ menuOpen }: { menuOpen: boolean }): ReactElement {
   return (
     <div className={`menu ${menuOpen ? 'open' : ''}`}>
       <form action="/search" style={{ width: 605 }}>
@@ -11,7 +12,7 @@ export default function ({ menuOpen }: { menuOpen: boolean }) {
             justifyContent: 'center',
             alignItems: 'center',
             height: 47,
-            width: 433,
+            width: 433
           }}
         >
           <img

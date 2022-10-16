@@ -1,3 +1,4 @@
+import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from '../layout'
 import ErrorPage from '../pages/ErrorPage'
@@ -16,41 +17,41 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage />,
+        element: <HomePage />
       },
       {
         path: 'category/:id',
-        element: <CategoryPage />,
+        element: <CategoryPage />
       },
       {
         path: 'product/:id',
-        element: <ProductPage />,
+        element: <ProductPage />
       },
       {
         path: 'search',
-        element: <SearchPage />,
+        element: <SearchPage />
       },
       {
         path: 'services',
-        element: <ServicesPage />,
+        element: <ServicesPage />
       },
       {
         path: 'orders',
-        element: <OrdersPage />,
+        element: <OrdersPage />
       },
       {
         path: 'account',
-        element: <AccountPage />,
+        element: <AccountPage />
       },
       {
         path: 'cart',
-        element: <CartPage />,
+        element: <CartPage />
       },
       {
-        path:"*",
-        element: <ErrorPage />,
+        path: '*',
+        element: <ErrorPage />
       }
-    ],
-  },
+    ]
+  }
 ])
 export default router

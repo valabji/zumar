@@ -1,17 +1,17 @@
+import React, { useState, ReactElement } from 'react'
 import formatPrice from '../../../utils/formatPrice'
 import '../../../style/components/product-quantity.scss'
-import { useState } from 'react'
 
-export default function ({
+export default function quantity ({
   onChange,
   basePrice,
   prices,
   stock,
-  variantsPrice,
-}: quantityItem) {
+  variantsPrice
+}: quantityItem): ReactElement {
   const [quantity, setQuantity] = useState(1)
-  let tmpPrices = []
-  let newBasePrice: PriceOption = { price: basePrice, min: 1, max: null }
+  const tmpPrices = []
+  const newBasePrice: PriceOption = { price: basePrice, min: 1, max: null }
   tmpPrices.push(newBasePrice)
   prices.forEach((e) => {
     tmpPrices.push(e)
@@ -33,20 +33,20 @@ export default function ({
       <div className="product-quantity-options">
         <span
           onClick={() => {
-            quantity != 1 && setQuantity(quantity - 1)
+            quantity !== 1 && setQuantity(quantity - 1)
           }}
           className={`${
-            quantity != 1 ? 'btn active' : ''
+            quantity !== 1 ? 'btn active' : ''
           } product-quantity-btn product-quantity-minus`}
         >
           <img src="/imgs/minus.svg" width={16} />
         </span>
         <span
           onClick={() => {
-            quantity != stock && setQuantity(quantity + 1)
+            quantity !== stock && setQuantity(quantity + 1)
           }}
           className={`${
-            quantity != stock ? 'btn active' : ''
+            quantity !== stock ? 'btn active' : ''
           } product-quantity-btn product-quantity-plus`}
         >
           <img src="/imgs/plus.svg" width={16} />

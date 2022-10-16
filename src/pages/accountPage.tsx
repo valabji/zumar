@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom'
+import React, { ReactElement } from 'react'
 
-export default function () {
+export default function accountPage (): ReactElement {
   return (
     <div className="container">
       <h1>Account Page</h1>

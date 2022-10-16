@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style/index.scss'
-import App from './layout/index'
 import { RouterProvider } from 'react-router-dom'
 import router from './routes/router'
 import { Provider } from 'react-redux'
@@ -16,5 +15,5 @@ root.render(
         <RouterProvider router={router} />
       </PersistGate>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
